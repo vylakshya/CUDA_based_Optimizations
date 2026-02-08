@@ -54,8 +54,6 @@ int main() {
     cudaMalloc(&d_result, sizeof(float));
     cudaMemcpy(d_result, &h_result, sizeof(float), cudaMemcpyHostToDevice);
 
-    // Launch configuration
-    // We don't need millions of threads; 256 blocks of 256 threads is plenty
     int threadsPerBlock = BLOCK_SIZE;
     int blocksPerGrid = 256;
 
