@@ -16,3 +16,12 @@ Key Optimizations :
   Grid Layout:
   
   2D grid of 2D blocks.Complexity: $O(n^3)$ operations, but memory bound is significantly improved via tiling.
+## 2. Numerical Integration
+This implementation calculates the definite integral of a function using the Trapezoidal Rule.
+Key Optimizations:
+
+-> Grid-Stride Loops: Rather than assuming one thread per interval, threads loop over the range. This makes the code robust to any input size $N$ and keeps the GPU execution units busy without overhead.
+
+-> Two-Stage Reduction: To avoid "Atomic Contention," threads first sum their values into registers, then perform a tree-based reduction in Shared Memory to find the block sum.
+
+-> Atomic Aggregation: Only the final thread of each block performs an atomicAdd to global memory, minimizing the bottleneck on the final result variable.
