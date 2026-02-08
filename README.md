@@ -14,6 +14,7 @@ Key Optimizations :
 
 ## 2. Numerical Integration
 This implementation calculates the definite integral of a function using the Trapezoidal Rule.
+
 Key Optimizations:
 
 -> Grid-Stride Loops: Rather than assuming one thread per interval, threads loop over the range. This makes the code robust to any input size $N$ and keeps the GPU execution units busy without overhead.
