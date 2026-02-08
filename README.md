@@ -11,13 +11,7 @@ Key Optimizations :
   
   -> Bank Conflict Avoidance: The TILE_SIZE is aligned with the GPU warp size (32), ensuring smooth access to shared memory banks.
   
-  Usage:
-  
-  The kernel expects three pointers (d_A, d_B, d_C) and dimensions $M$, $N$, and $K$.
-  
-  Grid Layout:
-  
-  2D grid of 2D blocks.Complexity: $O(n^3)$ operations, but memory bound is significantly improved via tiling.
+
 ## 2. Numerical Integration
 This implementation calculates the definite integral of a function using the Trapezoidal Rule.
 Key Optimizations:
