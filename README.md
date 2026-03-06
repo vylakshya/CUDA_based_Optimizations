@@ -25,4 +25,4 @@ Key Optimizations:
 -> Atomic Aggregation: Only the final thread of each block performs an atomicAdd to global memory, minimizing the bottleneck on the final result variable.
 
 ## Ray Tracing with CUDA implementation
-Shifted it to github.com/vylakshya/RayTracing2.0
+Shifted it to https://github.com/vylakshya/RayTracing2.0
