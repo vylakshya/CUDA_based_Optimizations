@@ -19,6 +19,9 @@ Key Optimizations:
 
 -> Grid-Stride Loops: Rather than assuming one thread per interval, threads loop over the range. This makes the code robust to any input size $N$ and keeps the GPU execution units busy without overhead.
 
+## Ray Tracing with CUDA implementation
+Shifted it to github.com/vylakshya/RayTracing2.0
+
 -> Two-Stage Reduction: To avoid "Atomic Contention," threads first sum their values into registers, then perform a tree-based reduction in Shared Memory to find the block sum.
 
 -> Atomic Aggregation: Only the final thread of each block performs an atomicAdd to global memory, minimizing the bottleneck on the final result variable.
